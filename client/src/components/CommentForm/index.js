@@ -20,7 +20,7 @@ const CommentForm = ({ postId }) => {
         variables: {
           postId,
           commentText,
-          commentAuthor: Auth.getProfile().data.username,
+          commentAuthor: Auth.getProfile().data.profilename,
         },
       });
 

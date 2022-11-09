@@ -8,11 +8,11 @@ import Auth from '../utils/auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
+    profilename: '',
     email: '',
     password: '',
   });
-  const [addUser, { error, data }] = useMutation(ADD_USER);
+  const [addProfile, { error, data }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -28,11 +28,11 @@ const Signup = () => {
     console.log(formState);
 
     try {
-      const { data } = await addUser({
+      const { data } = await addProfile({
         variables: { ...formState },
       });
 
-      Auth.login(data.addUser.token);
+      Auth.login(data.addProfile.token);
     } catch (e) {
       console.error(e);
     }
@@ -53,8 +53,8 @@ const Signup = () => {
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Your username"
-                  name="username"
+                  placeholder="Your profilename"
+                  name="profilename"
                   type="text"
                   value={formState.name}
                   onChange={handleChange}
