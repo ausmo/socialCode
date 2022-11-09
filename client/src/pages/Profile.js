@@ -10,15 +10,15 @@ import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
 const Profile = () => {
-  const { username: userParam } = useParams();
+  const { profilename: profileParam } = useParams();
 
-  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-    variables: { username: userParam },
+  const { loading, data } = useQuery(profileParam ? QUERY_USER : QUERY_ME, {
+    variables: { profilename: profileParam },
   });
 
-  const user = data?.me || data?.user || {};
-  // navigate to personal profile page if username is yours
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+  const profile = data?.me || data?.profile || {};
+  // navigate to personal profile page if profilename is yours
+  if (Auth.loggedIn() && Auth.getProfile().data.profilename === profileParam) {
     return <Navigate to="/me" />;
   }
 
@@ -26,7 +26,7 @@ const Profile = () => {
     return <div>Loading...</div>;
   }
 
-  if (!user?.username) {
+  if (!profile?.profilename) {
     return (
       <h4>
         You need to be logged in to see this. Use the navigation links above to
@@ -39,18 +39,18 @@ const Profile = () => {
     <div>
       <div className="flex-row justify-center mb-3">
         <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
-          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+          Viewing {profileParam ? `${profile.profilename}'s` : 'your'} profile.
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
           <PostList
-            posts={user.posts}
-            title={`${user.username}'s posts...`}
+            posts={profile.posts}
+            title={`${profile.profilename}'s posts...`}
             showTitle={false}
-            showUsername={false}
+            showProfilename={false}
           />
         </div>
-        {!userParam && (
+        {!profileParam && (
           <div
             className="col-12 col-md-10 mb-3 p-3"
             style={{ border: '1px dotted #1a1a1a' }}

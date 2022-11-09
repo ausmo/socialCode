@@ -5,7 +5,7 @@ const PostList = ({
   posts,
   title,
   showTitle = true,
-  showUsername = true,
+  showProfilename = true,
 }) => {
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;
@@ -18,7 +18,7 @@ const PostList = ({
         posts.map((post) => (
           <div key={post._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
-              {showUsername ? (
+              {showProfilename ? (
                 <Link
                   className="text-light"
                   to={`/profiles/${post.postAuthor}`}
