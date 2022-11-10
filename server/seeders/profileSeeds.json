@@ -1,0 +1,37 @@
+[
+  {
+    "profilename": "test",
+    "email": "test@test.com",
+    "password": "testing123"
+  },
+  {
+    "profilename": "profile",
+    "email": "profile@profile.com",
+    "password": "profile123"
+  },
+  {
+    "profilename": "Savannah",
+    "email": "sjoy@sjoy.com",
+    "password": "sjoy6034"
+  },
+  {
+    "profilename": "Dane Edwards",
+    "email": "dane@dane.com",
+    "password": "dane123"
+  },
+  {
+    "profilename": "Andrew L",
+    "email": "andrew@andrew.com",
+    "password": "andrew123"
+  },
+  {
+    "profilename": "Alex Luce",
+    "email": "alex@alexluce.com",
+    "password": "alex123"
+  },
+  {
+    "profilename": "Austin Moore",
+    "email": "austin@austin.com",
+    "password": "austin123"
+  }
+]
