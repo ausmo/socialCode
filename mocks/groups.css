@@ -1,0 +1,17 @@
+.navbar{
+    background-color: rgb(30, 30, 30);
+    box-shadow: 0 0 10px rgb(0, 180, 0);
+  }
+  
+  .logo{
+    margin-left: 10px;
+  }
+  
+  .navbar-item{
+    color:rgb(0, 180, 0);
+  }
+  
+  #signupButton{
+    background-color: rgb(30, 30, 30);
+    color:rgb(0, 180, 0);
+  }
