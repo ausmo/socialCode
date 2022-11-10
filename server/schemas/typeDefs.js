@@ -10,8 +10,8 @@ const typeDefs = gql`
     affiliation: String
     location: String
     experience: String
-    friends: ?
-    groups: ?
+    friends: [Friends]
+    groups: [Groups]
     github: String
     linkedin: String
   }
@@ -36,7 +36,7 @@ const typeDefs = gql`
     groupTitle: String
     createdAt: String
     groupAuthor: String
-    groupMembers: ?
+    groupMembers: [Profile]
   }
 
   type Friends {

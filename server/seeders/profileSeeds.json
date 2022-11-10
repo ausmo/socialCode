@@ -1,52 +1,37 @@
 [
   {
-    "profilename": "Brian Kernighan",
-    "email": "bkernighan@techfriends.dev",
-    "password": "password01"
+    "profilename": "test",
+    "email": "test@test.com",
+    "password": "testing123"
   },
   {
-    "profilename": "Max Kanat-Alexander",
-    "email": "mkanatalexander@techfriends.dev",
-    "password": "password02"
+    "profilename": "profile",
+    "email": "profile@profile.com",
+    "password": "profile123"
   },
   {
-    "profilename": "Why The Lucky Stiff",
-    "email": "wtls@techfriends.dev",
-    "password": "password03"
+    "profilename": "Savannah",
+    "email": "sjoy@sjoy.com",
+    "password": "sjoy6034"
   },
   {
-    "profilename": "Kent Beck",
-    "email": "kbeck@techfriends.dev",
-    "password": "password04"
+    "profilename": "Dane Edwards",
+    "email": "dane@dane.com",
+    "password": "dane123"
   },
   {
-    "profilename": "Edward V. Berard",
-    "email": "evberard@techfriends.dev",
-    "password": "password05"
+    "profilename": "Andrew L",
+    "email": "andrew@andrew.com",
+    "password": "andrew123"
   },
   {
-    "profilename": "Alan Kay",
-    "email": "akay@techfriends.dev",
-    "password": "password06"
+    "profilename": "Alex Luce",
+    "email": "alex@alexluce.com",
+    "password": "alex123"
   },
   {
-    "profilename": "C.A.R. Hoare",
-    "email": "choare@techfriends.dev",
-    "password": "password07"
-  },
-  {
-    "profilename": "David Thomas",
-    "email": "dthomas@techfriends.dev",
-    "password": "password08"
-  },
-  {
-    "profilename": "Donald Knuth",
-    "email": "dknuth@techfriends.dev",
-    "password": "password09"
-  },
-  {
-    "profilename": "Lernantino",
-    "email": "lernantino@techfriends.dev",
-    "password": "password10"
+    "profilename": "Austin Moore",
+    "email": "austin@austin.com",
+    "password": "austin123"
   }
 ]

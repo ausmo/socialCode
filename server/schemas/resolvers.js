@@ -98,6 +98,23 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    addFriend: async (parent, {profileId, profilename}, context) => {
+      if (context.profile) {
+        return Post.findOneAndUpdate(
+          { _id: profileId },
+          {
+            $addToSet: {
+              friends: ( profilename ),
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');     
+    },
     removePost: async (parent, { postId }, context) => {
       if (context.profile) {
         const post = await Post.findOneAndDelete({
