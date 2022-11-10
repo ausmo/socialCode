@@ -28,6 +28,7 @@ const groupSchema = new Schema({
       groupAuthor: {
         type: String,
         required: true,
+        trim: true,
       },
 
       groupMembers: {
