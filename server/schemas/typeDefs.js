@@ -7,6 +7,13 @@ const typeDefs = gql`
     email: String
     password: String
     posts: [Post]!
+    affiliation: String
+    location: String
+    experience: String
+    friends: ?
+    groups: ?
+    github: String
+    linkedin: String
   }
 
   type Post {
@@ -24,6 +31,19 @@ const typeDefs = gql`
     createdAt: String
   }
 
+  type Group {
+    _id: ID
+    groupTitle: String
+    createdAt: String
+    groupAuthor: String
+    groupMembers: ?
+  }
+
+  type Friends {
+    _id: ID
+    profile: Profile
+  }
+
   type Auth {
     token: ID!
     profile: Profile
@@ -35,6 +55,7 @@ const typeDefs = gql`
     posts(profilename: String): [Post]
     post(postId: ID!): Post
     me: Profile
+    group: Group
   }
 
   type Mutation {
@@ -44,6 +65,8 @@ const typeDefs = gql`
     addComment(postId: ID!, commentText: String!): Post
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post
+    addGroup(groupName: String!): Post
+    addFriend(profileId: ID!): Post
   }
 `;
 
