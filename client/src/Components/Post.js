@@ -1,9 +1,10 @@
+import savannah from "../img/savannah.jpg";
 export default function Post() {
     return (
 <>
 <figure className="media-left">
           <p className="image is-64x64">
-            {/* <img src={savannah} className="is-rounded" /> */}
+            <img src={savannah} className="is-rounded" />
           </p>
         </figure>
         <div className="media-content">

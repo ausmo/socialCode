@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:monospace;
+}
+
+body{
+    background-color: rgb(36, 36, 36);
+}
+
+/* Navbar Area */
+
+.logo{
+    max-width: 100px;
+    margin-left: 10px;
+    text-shadow: 0  15px green;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:green;
+    box-shadow: 0 0 15px green;
+}
+
+.nav-right ul li{
+    list-style: none;
+    display:inline-block;
+    color: rgb(36, 36, 36);
+    padding-right: 25px;
+}
+
+.nav-link{
+    color: rgb(36, 36, 36);
+}
+
+/* Banner Area */
+
+.banner{
+    text-align: center;
+    padding-top: 30px;
+    font-size:75px;
+    color:green;
+}
+
+/* Main Area */
+
+#newPostHome{
+    width: 1200px;
+    height: 100px;
+    margin-left: 325px;
+    margin-top: 100px;
+    border: 3px solid;
+    border-color: green;
+    border-radius: 5px;
+    outline:none !important;
+    box-shadow: 0 0 15px green;
+}
+
+.newPostButton{
+    height: 50px;
+    width: 55px;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    margin-left: 5px;
+    color:green;
+    background-color: rgb(23, 23, 23);
+    box-shadow: 0 0 15px green;
+}
+
+.box1{
+    width: 1050px;
+    height: 100px;
+    border: 1px solid green;
+    background-color: green;
+    border-radius: 5px;
+    margin-left: 400px;
+    margin-top: 20px;
+}
+
+.box2{
+    width: 1000px;
+    height: 100px;
+    border: 1px solid green;
+    background-color: rgb(0, 181, 0);
+    border-radius: 5px;
+    margin-left: 450px;
+    margin-top: 10px;
+}
+
+.commentButton{
+    height: 50px;
+    width: 58px;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    margin-left: 5px;
+    color:green;
+    background-color: rgb(23, 23, 23);
+    margin-top: 50px;
+    box-shadow: 0 0 15px green;
+}
+
+.post1{
+    display:flex;
+}
