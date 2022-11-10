@@ -1,0 +1,80 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+ 
+}
+
+body{
+  background-color: rgb(30, 30, 30);
+}
+
+/* Navbar Area */
+
+.navbar{
+  background-color: rgb(30, 30, 30);
+  box-shadow: 0 0 10px rgb(0, 180, 0);
+}
+
+.logo{
+  margin-left: 10px;
+}
+
+.navbar-item{
+  color:rgb(0, 180, 0);
+}
+
+#signupButton{
+  background-color: rgb(30, 30, 30);
+  color:rgb(0, 180, 0);
+}
+
+/* Banner Area */
+
+.banner{
+  text-align: center;
+  padding-top: 30px;
+  font-size:75px;
+  color:rgb(0, 180, 0);
+}
+
+/* .bannerLogo{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+/* Post Area */
+
+.media{
+  /* padding-left: 150px; */
+  /* padding-right: 150px; */
+  padding-left: 150px;
+  padding-right: 150px;
+  display: center;
+}
+
+.postBody{
+  color:rgb(0, 180, 0);
+}
+
+.name{
+  color:white;
+}
+
+.likeReply{
+  color:white;
+}
+
+.textarea{
+background-color: rgb(225, 250, 225);
+font-family: monospace;
+}
+
+.postButton{
+  background-color: rgb(0, 180, 0);
+  color:white;
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+}
