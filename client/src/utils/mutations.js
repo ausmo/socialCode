@@ -44,9 +44,21 @@ export const ADD_GROUP = gql`
     addGroup(groupId: $groupId){
         _id
         groupTitle
-        groupMembers
-        groupAuthor
         createdAt
+        groupAuthor
+        groupMembers
+    }
+  }
+`;
+
+export const ADD_FRIEND = gql`
+  mutation addFriend($profileId: ID!) {
+    addFriend(profileId: $profileId){
+      _id
+      profile {
+      _id
+        profilename
+        }
     }
   }
 `;
