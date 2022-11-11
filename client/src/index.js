@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css';
 import './login.css';
-import './profile.css';
-import './groups.css';
-import './homepage.css';
+// import './profile.css';
+// import './groups.css';
+// import './homepage.css';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';

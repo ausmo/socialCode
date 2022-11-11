@@ -16,7 +16,7 @@
     box-shadow: 0 0 10px rgb(0, 180, 0);
   }
   
-  .logo{
+  .homepageLogo{
     margin-left: 10px;
   }
   
@@ -26,14 +26,15 @@
   }
 
   .navbar-items:hover{
-    color:green
+    color:green;
+    transition: 0.5s;
   }
   
   
   
   /* Banner Area */
   
-  .banner{
+  .homepageBanner{
     text-align: center;
     padding-top: 30px;
     font-size:75px;
@@ -42,7 +43,7 @@
   
   /* Post Area */
   
-  .media{
+  .homepageMedia{
     padding-left: 150px;
     padding-right: 150px;
     padding-left: 150px;
@@ -63,10 +64,11 @@
   }
 
   .likeReply:hover{
-    color:rgb(0, 180, 0)
+    color:rgb(0, 180, 0);
+    transition: 0.5s;
   }
   
-  .textarea{
+  .homepageTextarea{
   background-color: rgb(225, 250, 225);
   font-family: monospace;
   }
