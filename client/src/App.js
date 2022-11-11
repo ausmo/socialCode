@@ -15,8 +15,10 @@ import Login from './pages/Login';
 import Login2 from './pages/Login2';
 // import SingleThought from './pages/SingleThought';
 import Profile from './pages/Profile';
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import PostForm from './components/PostForm'
+import PostBody from './components/PostBody'
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -46,7 +48,10 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+      <Navbar/>
       <Login2/>
+      <PostForm/>
+      
       </Router>
     </ApolloProvider>
   );
