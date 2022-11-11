@@ -1,6 +1,8 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_USER = gql`
+// user -> profile, thoughts -> post needs to be changed
+
+export const QUERY_PROFILE = gql`
   query profile($profilename: String!) {
     profile(profilename: $profilename) {
       _id
@@ -15,8 +17,8 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getPosts {
+export const QUERY_POST = gql`
+  query getPost {
     posts {
       _id
       postText
@@ -26,7 +28,7 @@ export const QUERY_THOUGHTS = gql`
   }
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
+export const QUERY_SINGLE_POST = gql`
   query getSinglePost($postId: ID!) {
     post(postId: $postId) {
       _id
