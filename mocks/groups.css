@@ -22,7 +22,8 @@
 }
 
 .navbar-items:hover{
-  color:green
+  color:green;
+  transition: 0.5s;
 }
 
 /* Banner Area */
@@ -86,7 +87,8 @@
 }
 
 .likeReply:hover{
-  color:rgb(0, 180, 0)
+  color:rgb(0, 180, 0);
+  transition: 0.5s;
 }
 
 .field{
