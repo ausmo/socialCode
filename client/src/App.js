@@ -13,12 +13,12 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Login2 from './pages/Login2';
-// import SingleThought from './pages/SingleThought';
 import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import PostForm from './components/PostForm'
 import PostBody from './components/PostBody'
+import CommentBody from './components/CommentBody';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
