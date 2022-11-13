@@ -8,13 +8,17 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import SinglePost from './pages/SinglePost';
+import Login2 from './pages/Login2';
 import Profile from './pages/Profile';
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import PostForm from './components/PostForm'
+import PostBody from './components/PostBody'
+import CommentBody from './components/CommentBody';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -44,7 +48,17 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+      <Navbar/>
+      <Login2/>
+      <PostForm/>
+      
+      </Router>
+    </ApolloProvider>
+  );
+}
+
+export default App;
+{/* <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
             <Routes>
@@ -65,20 +79,14 @@ function App() {
                 element={<Profile />}
               />
               <Route 
-                path="/profiles/:profilename"
+                path="/profiles/:username"
                 element={<Profile />}
               />
-              <Route 
-                path="/posts/:postId"
-                element={<SinglePost />}
-              />
+              {/* <Route 
+                path="/thoughts/:thoughtId"
+                element={<SingleThought />}
+              /> }
             </Routes>
           </div>
           <Footer />
-        </div>
-      </Router>
-    </ApolloProvider>
-  );
-}
-
-export default App;
+        </div> */}

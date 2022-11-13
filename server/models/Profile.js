@@ -25,6 +25,12 @@ const profileSchema = new Schema({
       ref: 'Post',
     },
   ],
+  friends: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Profile',
+    }
+  ]
 });
 
 profileSchema.pre('save', async function (next) {
