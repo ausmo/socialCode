@@ -3,7 +3,7 @@ import PostForm from "../components/PostForm";
 import CommentForm from "../components/CommentForm"
 import CommentBody from "../components/CommentBody";
 
-export default function Groups(params) {
+export default function Home2(params) {
   return (
     <>
       <Navbar />
