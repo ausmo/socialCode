@@ -144,7 +144,6 @@ export default function Login2(params) {
       </div>
     </div>
   </section>
-  <Footer/>
   </>
   )
 }
