@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_THOUGHT } from '../../utils/mutations';
-import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
+import { ADD_POST } from '../../utils/mutations';
+import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
@@ -12,13 +12,13 @@ const PostForm = () => {
 
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addPost, { error }] = useMutation(ADD_THOUGHT, {
+  const [addPost, { error }] = useMutation(ADD_POST, {
     update(cache, { data: { addPost } }) {
       try {
-        const { posts } = cache.readQuery({ query: QUERY_THOUGHTS });
+        const { posts } = cache.readQuery({ query: QUERY_POSTS });
 
         cache.writeQuery({
-          query: QUERY_THOUGHTS,
+          query: QUERY_POSTS,
           data: { posts: [addPost, ...posts] },
         });
       } catch (e) {
