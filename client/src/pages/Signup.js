@@ -1,16 +1,26 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
+<<<<<<< HEAD
 import { useMutation } from '@apollo/client';
 import { ADD_PROFILE } from '../utils/mutations';
+=======
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
+>>>>>>> 035d0a69e81cdb5596678d1f58b42a643b868272
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    profilename: '',
-    email: '',
-    password: '',
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    address: "",
+    linkedin: "",
+    github: "",
+    employer: "",
   });
   const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
 
@@ -46,41 +56,154 @@ const Signup = () => {
           <div className="card-body">
             {data ? (
               <p>
-                Success! You may now head{' '}
+                Success! You may now head{" "}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your profilename"
-                  name="profilename"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
+                <div class="field">
+                  <label class="label">First Name</label>
+                  <div class="control has-icons-left">
+                    <input
+                      className="form-input"
+                      placeholder="Electric"
+                      name="firstname"
+                      type="text"
+                      value={formState.firstname}
+                      onChange={handleChange}
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Last Name</label>
+                  <div class="control has-icons-left">
+                    <input
+                      className="form-input"
+                      placeholder="Boogaloo"
+                      name="lastname"
+                      type="text"
+                      value={formState.lastname}
+                      onChange={handleChange}
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control has-icons-left">
+                    <input
+                      className="form-input"
+                      placeholder="electric@boogaloo.com"
+                      name="email"
+                      type="email"
+                      value={formState.email}
+                      onChange={handleChange}
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Password</label>
+                  <div class="control has-icons-left">
+                    <input
+                      className="form-input"
+                      placeholder="********"
+                      name="password"
+                      type="email"
+                      value={formState.password}
+                      onChange={handleChange}
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+
+
+                <div class="field">
+                  <label class="label">Address</label>
+                  <div class="control has-icons-left">
+                    <input
+                      className="form-input input"
+                      placeholder="e.g. Funkytown TX, 75006"
+                      name="address"
+                      type="text"
+                      value={formState.address}
+                      onChange={handleChange}
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">LinkedIn</label>
+                  <div class="control has-icons-left">
+                    <input
+                      className="form-input input"
+                      placeholder="e.g. www.linkedin.com/in/electricboogaloo"
+                      name="linkedin"
+                      type="text"
+                      value={formState.linkedin}
+                      onChange={handleChange}
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">GitHub</label>
+                  <div class="control has-icons-left">
+                    <input
+                      className="form-input input"
+                      placeholder="e.g. www.github.com/electricboogaloo"
+                      name="github"
+                      type="text"
+                      value={formState.github}
+                      onChange={handleChange}
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Employer</label>
+                  <div class="control has-icons-left">
+                    <input
+                      className="form-input input"
+                      placeholder="e.g. Google"
+                      name="employer"
+                      type="text"
+                      value={formState.employer}
+                      onChange={handleChange}
+                    />
+
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
                 <button
                   className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                   type="submit"
                 >
-                  Submit
+                  Sign Up
                 </button>
               </form>
             )}

@@ -1,0 +1,109 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  background-color: rgb(30, 30, 30);
+ 
+}
+
+/* Navbar Area */
+
+.navbar{
+  box-shadow: 0 0 10px rgb(0, 180, 0);
+}
+
+.groupsLogo{
+  margin-left: 10px;
+}
+
+.navbar-items{
+  color:rgb(0, 180, 0);
+  margin: 10px;
+}
+
+.navbar-items:hover{
+  color:green;
+  transition: 0.5s;
+}
+
+/* Banner Area */
+
+.banner{
+  text-align: center;
+  padding-top: 50px;
+  font-size:75px;
+  color:rgb(0, 180, 0);
+}
+
+.groupName{
+  text-align: center;
+  padding-top: 30px;
+  font-size:45px;
+  color:rgb(255, 255, 255);
+}
+
+/* Left Main Area */
+
+.groupMembersTitle{
+  color:rgb(0, 180, 0);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.groupMembers{
+  padding-left: 50px;
+}
+
+.groupMember{
+  color:white;
+}
+
+.container{
+  display:flex;
+}
+
+/* Right Main Area */
+
+.postsHeader{
+  color:rgb(0, 180, 0);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bolder;
+  margin-bottom: 50px;
+}
+
+.postBody{
+  color:rgb(0, 180, 0);
+  padding-right: 50px;
+}
+
+.name{
+  color:white;
+}
+
+.likeReply{
+  color:white;
+}
+
+.likeReply:hover{
+  color:rgb(0, 180, 0);
+  transition: 0.5s;
+}
+
+.field{
+  margin-right:50px;
+}
+
+.textarea{
+background-color: rgb(225, 250, 225);
+font-family: monospace;
+}
+
+.postButton{
+  background-color: rgb(0, 180, 0);
+  color:white;
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+}
