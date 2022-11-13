@@ -103,13 +103,13 @@ const resolvers = {
       // }
       throw new AuthenticationError('You must be logged in to create a group!');
     },
-    addFriend: async (parent, {profileId, profilename}, context) => {
+    addFriend: async (parent, {profileId}, context) => {
       if (context.profile) {
-        return Post.findOneAndUpdate(
-          { _id: profileId },
+        return Profile.findOneAndUpdate(
+          { _id: context.profile._id},
           {
             $addToSet: {
-              friends: ( profilename ),
+              friends: ( profileId ),
             },
           },
           {

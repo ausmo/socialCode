@@ -54,9 +54,8 @@ export const ADD_GROUP = gql`
 export const ADD_FRIEND = gql`
   mutation addFriend($profileId: ID!) {
     addFriend(profileId: $profileId){
-      _id
       profile {
-      _id
+        _id
         profilename
         }
     }

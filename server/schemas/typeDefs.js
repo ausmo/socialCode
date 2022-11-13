@@ -21,7 +21,7 @@ const typeDefs = gql`
     postText: String
     postAuthor: String
     createdAt: String
-    comments: [Comment]!
+    comments: [Comment]
   }
 
   type Comment {
@@ -66,7 +66,7 @@ const typeDefs = gql`
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post
     addGroup(groupName: String!): Post
-    addFriend(profileId: ID!): Post
+    addFriend(profileId: ID!): Friends
   }
 `;
 
