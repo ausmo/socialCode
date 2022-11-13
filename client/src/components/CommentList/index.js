@@ -1,5 +1,5 @@
 import React from 'react';
-
+import CommentBody from '../CommentBody'
 const CommentList = ({ comments = [] }) => {
   if (!comments.length) {
     return <h3>No Comments Yet</h3>;
@@ -25,6 +25,7 @@ const CommentList = ({ comments = [] }) => {
                   </span>
                 </h5>
                 <p className="card-body">{comment.commentText}</p>
+                <CommentBody/>
               </div>
             </div>
           ))}
