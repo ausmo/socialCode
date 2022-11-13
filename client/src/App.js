@@ -51,6 +51,7 @@ function App() {
       <Navbar/>
       <Login2/>
       <PostForm/>
+      <Footer/>
       
       </Router>
     </ApolloProvider>
