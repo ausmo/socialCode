@@ -6,7 +6,7 @@
   box-shadow: 0 0 10px rgb(0, 180, 0);
 }
 
-.groupsLogo{
+.logo{
   margin-left: 10px;
 }
 
@@ -36,7 +36,7 @@
   color:rgb(255, 255, 255);
 }
 
-/* Left Main Area */
+/* Groups Left Main Area */
 
 .groupMembersTitle{
   color:rgb(0, 180, 0);
@@ -53,7 +53,7 @@
   color:white;
 }
 
-/* Right Main Area */
+/* Groups Right Main Area */
 
 .postsHeader{
   color:rgb(0, 180, 0);
