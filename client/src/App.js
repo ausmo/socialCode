@@ -48,9 +48,8 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-      <Navbar/>
-      <Login2/>
-      <PostForm/>
+      
+      
       <Footer/>
       
       </Router>

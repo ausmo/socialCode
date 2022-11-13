@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+
 export default function Login2(params) {
     return(<><h1 class="is-size-1 has-text-centered" id="logo">
     Welcome to socialCode!
@@ -141,5 +143,8 @@ export default function Login2(params) {
         </div>
       </div>
     </div>
-  </section></>)
+  </section>
+  <Footer/>
+  </>
+  )
 }
