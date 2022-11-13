@@ -1,5 +1,9 @@
+import Navbar from "../components/Navbar";
+
 export default function Groups(params) {
-    return(<><h1 class="homepageBanner">socialCode</h1>
+    return(<>
+    <Navbar/>
+    <h1 class="homepageBanner">socialCode</h1>
     <br />
     <br />
     <br />
