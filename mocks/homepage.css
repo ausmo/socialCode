@@ -1,0 +1,76 @@
+
+
+  body{
+    height: 100%;
+  }
+  
+  /* Navbar Area */
+  
+  .navbar{
+    box-shadow: 0 0 10px rgb(0, 180, 0);
+  }
+  
+  .homepageLogo{
+    margin-left: 10px;
+  }
+  
+ .navbar-items{
+    color:rgb(0, 180, 0);
+    margin: 10px;
+  }
+
+  .navbar-items:hover{
+    color:green;
+    transition: 0.5s;
+  }
+  
+  
+  
+  /* Banner Area */
+  
+  .homepageBanner{
+    text-align: center;
+    padding-top: 30px;
+    font-size:75px;
+    color:rgb(0, 180, 0);
+  }
+  
+  /* Post Area */
+  
+  .homepageMedia{
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-left: 150px;
+    padding-right: 150px;
+    display: center;
+  }
+  
+  .postBody{
+    color:rgb(0, 180, 0);
+  }
+  
+  .name{
+    color:white;
+  }
+  
+  .likeReply{
+    color:white;
+  }
+
+  .likeReply:hover{
+    color:rgb(0, 180, 0);
+    transition: 0.5s;
+  }
+  
+  .homepageTextarea{
+  background-color: rgb(225, 250, 225);
+  font-family: monospace;
+  }
+  
+  .postButton{
+    background-color: rgb(0, 180, 0);
+    color:white;
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+  }
