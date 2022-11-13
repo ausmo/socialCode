@@ -25,7 +25,7 @@ const PostBody = () => {
         <div class="media-content"></div>
         <div class="content"></div>
         <p>
-          <strong className="name">Savannah</strong>
+          <strong className="name">{profilename}</strong>
         </p>
         <p className="postBody">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta
