@@ -3,15 +3,15 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type Profile {
     _id: ID
-    profilename: String
-    email: String
-    password: String
-    posts: [Post]!
+    profilename: String!
+    email: String!
+    password: String!
+    posts: [Post]
     affiliation: String
     location: String
     experience: String
     friends: [Friends]
-    groups: [Groups]
+    groups: [Group]
     github: String
     linkedin: String
   }
@@ -21,7 +21,7 @@ const typeDefs = gql`
     postText: String
     postAuthor: String
     createdAt: String
-    comments: [Comment]!
+    comments: [Comment]
   }
 
   type Comment {
@@ -66,7 +66,7 @@ const typeDefs = gql`
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post
     addGroup(groupName: String!): Post
-    addFriend(profileId: ID!): Post
+    addFriend(profileId: ID!): Friends
   }
 `;
 
