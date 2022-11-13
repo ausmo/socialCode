@@ -17,7 +17,7 @@ const profileSchema = new Schema({
   password: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 8,
   },
   posts: [
     {
@@ -25,6 +25,12 @@ const profileSchema = new Schema({
       ref: 'Post',
     },
   ],
+  friends: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Profile',
+    }
+  ]
 });
 
 profileSchema.pre('save', async function (next) {

@@ -12,7 +12,7 @@ export const LOGIN_USER = gql`
   }
 `;
 
-export const ADD_USER = gql`
+export const ADD_PROFILE = gql`
   mutation addProfile($profilename: String!, $email: String!, $password: String!) {
     addProfile(profilename: $profilename, email: $email, password: $password) {
       token
@@ -24,7 +24,7 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_THOUGHT = gql`
+export const ADD_POST = gql`
   mutation addPost($postText: String!) {
     addPost(postText: $postText) {
       _id
@@ -35,6 +35,29 @@ export const ADD_THOUGHT = gql`
         _id
         commentText
       }
+    }
+  }
+`;
+
+export const ADD_GROUP = gql`
+  mutation addGroup($groupId: ID!) {
+    addGroup(groupId: $groupId){
+        _id
+        groupTitle
+        createdAt
+        groupAuthor
+        groupMembers
+    }
+  }
+`;
+
+export const ADD_FRIEND = gql`
+  mutation addFriend($profileId: ID!) {
+    addFriend(profileId: $profileId){
+      profile {
+        _id
+        profilename
+        }
     }
   }
 `;

@@ -35,13 +35,13 @@ const resolvers = {
       const profile = await Profile.findOne({ email });
 
       if (!profile) {
-        throw new AuthenticationError('No profile found with this email address');
+        throw new AuthenticationError('Invalid Signin');
       }
 
       const correctPw = await profile.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError('Invalid Signin');
       }
 
       const token = signToken(profile);
@@ -62,7 +62,7 @@ const resolvers = {
 
         return post;
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError('You need to be logged in to create a post!');
     },
     addComment: async (parent, { postId, commentText }, context) => {
       if (context.profile) {
@@ -79,7 +79,46 @@ const resolvers = {
           }
         );
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError('You need to be logged in to comment!');
+    },
+    addGroup: async (parent, {groupId, groupTitle}, context) => {
+      if (context.profile) {
+      const group = await Group.create({ groupId, groupTitle });
+      const token = signToken(group);
+      return { token, group };
+      };
+      // if (context.profile) {
+      //   return Post.findOneAndUpdate(
+      //     { _id: groupId },
+      //     {
+      //       $addToSet: {
+      //         groups: { groupTitle, groupAuthor: context.profile.profilename },
+      //       },
+      //     },
+      //     {
+      //       new: true,
+      //       runValidators: true,
+      //     }
+      //   );
+      // }
+      throw new AuthenticationError('You must be logged in to create a group!');
+    },
+    addFriend: async (parent, {profileId}, context) => {
+      if (context.profile) {
+        return Profile.findOneAndUpdate(
+          { _id: context.profile._id},
+          {
+            $addToSet: {
+              friends: ( profileId ),
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');     
     },
     removePost: async (parent, { postId }, context) => {
       if (context.profile) {

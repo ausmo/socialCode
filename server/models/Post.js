@@ -4,9 +4,9 @@ const dateFormat = require('../utils/dateFormat');
 const postSchema = new Schema({
   postText: {
     type: String,
-    required: 'You need to leave a post!',
+    required: '<hello world>',
     minlength: 1,
-    maxlength: 280,
+    maxlength: 3001,
     trim: true,
   },
   postAuthor: {
@@ -25,7 +25,8 @@ const postSchema = new Schema({
         type: String,
         required: true,
         minlength: 1,
-        maxlength: 280,
+        maxlength: 3001,
+        trim: true,
       },
       commentAuthor: {
         type: String,
