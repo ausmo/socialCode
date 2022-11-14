@@ -90,7 +90,7 @@ export default function Home2(params) {
             <li class="friend">
               <p class="image is-48x48">
                 <img
-                  src="/mocks/img/alex.png"
+                  src="img/alex.png"
                   class="is-rounded"
                   alt="Alex Luce Profile Pic"
                 />
