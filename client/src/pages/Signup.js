@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-<<<<<<< HEAD
-import { useMutation } from '@apollo/client';
-import { ADD_PROFILE } from '../utils/mutations';
-=======
 import { useMutation } from "@apollo/client";
-import { ADD_USER } from "../utils/mutations";
->>>>>>> 035d0a69e81cdb5596678d1f58b42a643b868272
+import { ADD_PROFILE } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
