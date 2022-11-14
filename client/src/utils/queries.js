@@ -1,7 +1,10 @@
 import { gql } from '@apollo/client';
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 857fda8ab699c782d5f063081891dbdbed2bf746
 export const QUERY_PROFILE = gql`
   query profile($profilename: String!) {
     profile(profilename: $profilename) {

@@ -7,13 +7,13 @@ import { useQuery } from '@apollo/client';
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 
-import { QUERY_SINGLE_THOUGHT } from '../utils/queries';
+import { QUERY_SINGLE_POST } from '../utils/queries';
 
 const SinglePost = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { postId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_SINGLE_THOUGHT, {
+  const { loading, data } = useQuery(QUERY_SINGLE_POST, {
     // pass URL parameter
     variables: { postId: postId },
   });
