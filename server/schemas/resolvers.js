@@ -110,6 +110,7 @@ const resolvers = {
           {
             $addToSet: {
               friends: ( profileId ),
+              profile: ( profilename )
             },
           },
           {
