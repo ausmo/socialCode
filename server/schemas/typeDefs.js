@@ -10,7 +10,7 @@ const typeDefs = gql`
     affiliation: String
     location: String
     experience: String
-    friends: [Friends]
+    friends: [Profile]
     groups: [Group]
     github: String
     linkedin: String
@@ -39,10 +39,6 @@ const typeDefs = gql`
     groupMembers: [Profile]
   }
 
-  type Friends {
-    _id: ID
-    profile: Profile
-  }
 
   type Auth {
     token: ID!
@@ -66,7 +62,7 @@ const typeDefs = gql`
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post
     addGroup(groupName: String!): Post
-    addFriend(profileId: ID!): Friends
+    addFriend(profileId: ID!): Profile
   }
 `;
 
