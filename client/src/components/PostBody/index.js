@@ -1,6 +1,7 @@
 import React from "react";
 import Auth from "../../utils/auth";
-import alexPic from "../img/alex.png";
+import alexPic from "../../img/alex.png";
+import savannahPic from "../../img/savannah.jpg";
 
 const PostBody = () => {
   const logout = (event) => {
@@ -9,23 +10,23 @@ const PostBody = () => {
   };
   return (
     <>
-      <article class="homepageMedia">
-        <figure class="media-left">
-          <p class="image is-64x64">
+      <article className="homepageMedia">
+        <figure className="media-left">
+          <p className="image is-64x64">
             <img
-              src="/mocks/img/savannah.jpg"
+              src={savannahPic}
               alt="savannah"
-              class="is-rounded"
+              className="is-rounded"
             />
           </p>
         </figure>
         <div className="image is-48x48">
-          <img src={alexPic} alt="alex" class="is-rounded" />
+          <img src={alexPic} alt="alex" className="is-rounded" />
         </div>
-        <div class="media-content"></div>
-        <div class="content"></div>
+        <div className="media-content"></div>
+        <div className="content"></div>
         <p>
-          <strong className="name">{profilename}</strong>
+          <strong className="name">Savannah Mcginnis</strong>
         </p>
         <p className="postBody">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta
@@ -33,7 +34,7 @@ const PostBody = () => {
           mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
         </p>
         <small>
-          <a class="likeReply">Like</a> · <a class="likeReply">Reply</a>
+          <a className="likeReply">Like</a> · <a className="likeReply">Reply</a>
         </small>
       </article>
     </>

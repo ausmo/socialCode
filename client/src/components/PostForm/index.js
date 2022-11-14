@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 
 import { ADD_POST } from '../../utils/mutations';
 import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
-
+import me2 from "../../img/me2.jpg"
 import Auth from '../../utils/auth';
 
 const PostForm = () => {
@@ -61,21 +61,21 @@ const PostForm = () => {
   };
 
   return (
-    <article class="homepageMedia">
-      <figure class="media-left">
-        <p class="image is-64x64">
-          <img src="/mocks/img/me2.jpg" alt = "Austin" class="is-rounded"/>
+    <article className="homepageMedia">
+      <figure className="media-left">
+        <p className="image is-64x64">
+          <img src={me2} alt = "Austin" className="is-rounded"/>
         </p>
       </figure>
-      <div class="media-content">
-        <div class="field">
-          <p class="control">
-            <textarea class="textarea" placeholder='console.log("Hello World!")'></textarea>
+      <div className="media-content">
+        <div className="field">
+          <p className="control">
+            <textarea className="textarea" placeholder='console.log("Hello World!")'></textarea>
           </p>
         </div>
-        <div class="field">
-          <p class="control">
-            <button class="postButton">Post comment</button>
+        <div className="field">
+          <p className="control">
+            <button className="postButton">Post comment</button>
           </p>
         </div>
       </div>
