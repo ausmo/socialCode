@@ -9,6 +9,7 @@ import Auth from '../../utils/auth';
 const CommentForm = ({ postId }) => {
   const [commentText, setCommentText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
+  const [showCommentForm, toggleCommentForm] = useState(false)
 
   const [addComment, { error }] = useMutation(ADD_COMMENT);
 
@@ -53,7 +54,8 @@ const CommentForm = ({ postId }) => {
             Character Count: {characterCount}/280
             {error && <span className="ml-2">{error.message}</span>}
           </p>
-          <form
+          {showCommentForm ?<form
+
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
@@ -73,7 +75,7 @@ const CommentForm = ({ postId }) => {
                 Add Comment
               </button>
             </div>
-          </form>
+          </form>:(<button onClick = {()=>toggleCommentForm(!showCommentForm)}>Reply</button>)}
         </>
       ) : (
         <p>
