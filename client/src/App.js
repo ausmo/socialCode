@@ -8,11 +8,10 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-import Login2 from "./pages/Login2";
-import Profile from "./pages/Profile";
+import Home2 from "./pages/Home2";
+
+import {Login} from "./pages/Login2";
+import Profile2 from "./pages/Profile2";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PostForm from "./components/PostForm";
@@ -47,6 +46,14 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <Routes>
+          <Route path="/home" element={<Home2 />} />
+          <Route path="/" element={<Login />} />
+
+          <Route path="/me" element={<Profile2 />} />
+          <Route path="/profiles/:username" element={<Profile2 />} />
+          
+        </Routes>
         <Footer />
       </Router>
     </ApolloProvider>
@@ -54,37 +61,3 @@ function App() {
 }
 
 export default App;
-{
-  /* <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
-          <div className="container">
-            <Routes>
-              <Route 
-                path="/"
-                element={<Home />}
-              />
-              <Route 
-                path="/login"
-                element={<Login />}
-              />
-              <Route 
-                path="/signup"
-                element={<Signup />}
-              />
-              <Route 
-                path="/me"
-                element={<Profile />}
-              />
-              <Route 
-                path="/profiles/:username"
-                element={<Profile />}
-              />
-              {/* <Route 
-                path="/thoughts/:thoughtId"
-                element={<SingleThought />}
-              /> }
-            </Routes>
-          </div>
-          <Footer />
-        </div> */
-}

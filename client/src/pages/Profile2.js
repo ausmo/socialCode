@@ -5,39 +5,72 @@ import CommentBody from "../components/CommentBody";
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { QUERY_USER, QUERY_ME } from "../utils/queries";
+import { QUERY_PROFILE, QUERY_ME } from "../utils/queries";
 import Auth from "../utils/auth";
 import PostBody from "../components/PostBody";
-import savannahjpg from "../img/savannah.jpg"
+import PostList from '../components/PostList';
+import savannahPic from "../img/savannah.jpg";
+import CommentList from "../components/CommentList";
+import me2 from "../img/me2.jpg";
+import alexPic from "../img/alex.png";
+import groupPic from "../img/p3g.jpg";
 
-export default function Home2(params) {
+
+
+const Profile2 = () => {
+    const { profilename: profileParam } = useParams();
+
+  const { loading, data } = useQuery(profileParam ? QUERY_PROFILE : QUERY_ME, {
+    variables: { profilename: profileParam },
+  });
+
+  const profile = data?.me || data?.profile || {};
+
+  console.log(profile)
+  // navigate to personal profile page if profilename is yours
+  if (Auth.loggedIn() && Auth.getProfile().data.profilename === profileParam) {
+    return <Navigate to="/me" />;
+  }
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!profile?.profilename) {
+    return (
+      <h4>
+        You need to be logged in to see this. Use the navigation links above to
+        sign up or log in!
+      </h4>
+    );
+  }
   return (
     <>
       <Navbar />
-      {/* switch home page banner to username */}
-      <h1 class="homepageBanner">socialCode</h1>
+      
+      <h1 className="banner">Viewing {profile ? `${profile.profilename}'s` : 'your'} profile.</h1>
 
-      <div class="columns">
-        <div class="column is-one-third">
-          <p class="bd-notification is-info"></p>
-          <div class="columns is-mobile">
-            <div class="column">
-              <p class="bd-notification is-info"></p>
+      <div className="columns">
+        <div className="column is-one-third">
+          <p className="bd-notification is-info"></p>
+          <div className="columns is-mobile">
+            <div className="column">
+              <p className="bd-notification is-info"></p>
               {/* All of this needs to change by user, to line 44 */}
-              <p class="image is-256x256">
+              <p className="image is-256x256">
                 <img
-                  src="/mocks/img/me2.jpg" 
+                  src={me2}
                 //   need database for profile pic and alt
-                  class="is-rounded profilePic"
+                  className="is-rounded profilePic"
                   alt="Austin Moore Profile Pic"
                 />
               </p>
             </div>
-            <div class="column">
-              <p class="bd-notification is-info"></p>
+            <div className="column">
+              <p className="bd-notification is-info"></p>
               <br />
               <br />
-              <ul class="asl">
+              <ul className="asl">
                 {/* need to pull these from sign up database */}
                 <li>Dallas, TX</li> 
                 <li>Frontend Dev</li>
@@ -46,17 +79,17 @@ export default function Home2(params) {
             </div>
           </div>
         </div>
-        <div class="column">
-          <p class="bd-notification is-danger"></p>
-          <div class="columns is-mobile">
-            <div class="column is-half">
-              <p class="bd-notification is-danger"></p>
+        <div className="column">
+          <p className="bd-notification is-danger"></p>
+          <div className="columns is-mobile">
+            <div className="column is-half">
+              <p className="bd-notification is-danger"></p>
             </div>
-            <div class="column">
-              <p class="bd-notification is-danger"></p>
+            <div className="column">
+              <p className="bd-notification is-danger"></p>
             </div>
-            <div class="column">
-              <p class="bd-notification is-danger"></p>
+            <div className="column">
+              <p className="bd-notification is-danger"></p>
             </div>
           </div>
         </div>
@@ -70,54 +103,55 @@ export default function Home2(params) {
       <PostBody />
       <CommentList />
       <CommentForm />
-      <div class="columns">
-        <div class="column is-one-fifth">
-          <h2 class="friendsList">Friends</h2>
+      <PostList  posts={profile.posts} title={"test"}/>
+      <div className="columns">
+        <div className="column is-one-fifth">
+          <h2 className="friendsList">Friends</h2>
           <hr />
           {/* <!-- use css to get spacing we want here --> */}
-          <ul class="friends">
-            <li class="friend">
-              <p class="image is-48x48">
+          <ul className="friends">
+            <li className="friend">
+              <p className="image is-48x48">
                 <img
-                  src= {savannahjpg}
-                  class="is-rounded"
+                  src= {savannahPic}
+                  className="is-rounded"
                   alt="Savannah McGinnis Profile Pic"
                 />
 
                 {/* This is where username will go */}
               </p>
             </li>
-            <li class="friend">
-              <p class="image is-48x48">
+            <li className="friend">
+              <p className="image is-48x48">
                 <img
-                  src="img/alex.png"
-                  class="is-rounded"
+                  src={alexPic}
+                  className="is-rounded"
                   alt="Alex Luce Profile Pic"
                 />
               </p>
             </li>
           </ul>
           <br />
-          <p class="friend">and 141 others</p>
+          <p className="friend">and 141 others</p>
           <hr />
-          <h2 class="friendsList">Groups</h2>
+          <h2 className="friendsList">Groups</h2>
           <hr />
-          <p class="image is-48x48">
+          <p className="image is-48x48">
             <img
-              src="/mocks/img/p3g.jpg"
-              class="is-rounded p3g"
+              src={groupPic}
+              className="is-rounded p3g"
               alt="Project 3 Gang"
             />
           </p>
-          <div class="p3gText">Project 3 Gang</div>
+          <div className="p3gText">Project 3 Gang</div>
         </div>
-        <div class="column">
-          <div class="media">
-            <figure class="media-left">
-              <p class="image is-64x64">
+        <div className="column">
+          <div className="media">
+            <figure className="media-left">
+              <p className="image is-64x64">
                 <img
-                  src="/mocks/img/me2.jpg"
-                  class="is-rounded"
+                  src={me2}
+                  className="is-rounded"
                   alt="Austin Moore Profile Pic"
                 />
               </p>
@@ -129,3 +163,5 @@ export default function Home2(params) {
     </>
   );
 }
+
+export default Profile2;

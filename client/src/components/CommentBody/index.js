@@ -7,21 +7,21 @@ const CommentBody = ()=>{
         event.preventDefault();
         Auth.logout();
       };
-      return (<article class="homepageMedia">
-          <figure class="media-left">
-            <p class="image is-48x48">
-              <img src="/mocks/img/alex.png" alt = "alex" class="is-rounded"/>
+      return (<article className="homepageMedia">
+          <figure className="media-left">
+            <p className="image is-48x48">
+              <img src="/mocks/img/alex.png" alt = "alex" className="is-rounded"/>
             </p>
           </figure>
-          <div class="media-content">
-            <div class="content">
+          <div className="media-content">
+            <div className="content">
               <div>
-                <strong class="name">Alex</strong>
-                <p class="commentBody">
+                <strong className="name">Alex</strong>
+                <p className="commentBody">
                 Lorem ipsum
                 </p>
                 <br/>
-                <small><a class="likeReply">Like</a> · <a class="likeReply">Reply</a> </small>
+                <small><a className="likeReply">Like</a> · <a className="likeReply">Reply</a> </small>
             </div>
           </div>
           </div>

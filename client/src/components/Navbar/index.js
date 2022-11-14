@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
+import socialCodeLogo from "../../img/socialCodeLogo.jpg"
 
 const Navbar = ()=>{
     const logout = (event) => {
@@ -8,14 +9,14 @@ const Navbar = ()=>{
         Auth.logout();
       };
       return (
-<nav class="navbar top" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="">
-        <img src="/mocks/img/socialCodeLogo.jpg" alt="logo" class="groupsLogo" />
+<nav className="navbar top" role="navigation" aria-label="main navigation">
+    <div className="navbar-brand">
+      <a className="navbar-item" href="">
+        <img src={socialCodeLogo} alt="logo" className="groupsLogo" />
       </a>
       <a
         role="button"
-        class="navbar-burger"
+        className="navbar-burger"
         aria-label="menu"
         aria-expanded="false"
         data-target="navbarBasicExample"
@@ -26,7 +27,7 @@ const Navbar = ()=>{
       </a>
       <a
         role="button"
-        class="navbar-burger"
+        className="navbar-burger"
         aria-label="menu"
         aria-expanded="false"
         data-target="navbarBasicExample"
@@ -37,12 +38,12 @@ const Navbar = ()=>{
       </a>
     </div>
 
-    <div id="navbarItems" class="navbar-menu">
-      <div class="navbar-end">
-        <a class="navbar-items">Home</a>
-        <a class="navbar-items">Profile</a>
-        <a class="navbar-items">Groups</a>
-        <a class="navbar-items">Login/Signup</a>
+    <div id="navbarItems" className="navbar-menu">
+      <div className="navbar-end">
+        <Link className="navbar-items" to="/home">Home</Link>
+        <Link className="navbar-items" to="/me">Profile</Link>
+        <Link className="navbar-items" to="/groups">Groups</Link>
+        <Link className="navbar-items"to="/">Login/Signup</Link>
       </div>
     </div>
   </nav>
