@@ -1,7 +1,10 @@
 import { gql } from '@apollo/client';
 
+<<<<<<< HEAD
 // user -> profile, thoughts -> post needs to be changed
 
+=======
+>>>>>>> 857fda8ab699c782d5f063081891dbdbed2bf746
 export const QUERY_PROFILE = gql`
   query profile($profilename: String!) {
     profile(profilename: $profilename) {
@@ -17,8 +20,13 @@ export const QUERY_PROFILE = gql`
   }
 `;
 
+<<<<<<< HEAD
 export const QUERY_POST = gql`
   query getPost {
+=======
+export const QUERY_POSTS = gql`
+  query getPosts {
+>>>>>>> 857fda8ab699c782d5f063081891dbdbed2bf746
     posts {
       _id
       postText
