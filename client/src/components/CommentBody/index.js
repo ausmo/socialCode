@@ -18,7 +18,7 @@ const CommentBody = ()=>{
               <div>
                 <strong className="name">Alex</strong>
                 <p className="commentBody">
-                Lorem ipsum
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem nulla officiis optio perspiciatis voluptate culpa dolore nam voluptatum, hic quam impedit molestiae! Laudantium, magnam deleniti? Vero modi culpa aliquid, quam, ipsam minima, ullam eum nemo itaque mollitia repellendus accusamus debitis. Voluptas, doloremque. Tempore odio atque voluptas culpa laudantium at adipisci sint quas! Cumque dicta distinctio omnis odit rerum debitis, excepturi sed explicabo consequuntur nesciunt exercitationem natus minima corporis. Quia perspiciatis nobis ipsa mollitia in suscipit. Voluptates vitae quia officia obcaecati, dolor, voluptatum reiciendis, exercitationem consectetur assumenda explicabo reprehenderit numquam ipsum? Nisi impedit sequi consequatur ipsa, vero natus omnis voluptatum quis.
                 </p>
                 <br/>
                 <small><a className="likeReply">Like</a> · <a className="likeReply">Reply</a> </small>

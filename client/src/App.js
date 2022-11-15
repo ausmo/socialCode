@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home2 from "./pages/Home2";
 
-import {Login} from "./pages/Login2";
+import Login2 from "./pages/Login2";
 import Profile2 from "./pages/Profile2";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -48,7 +48,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/home" element={<Home2 />} />
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Login2 />} />
 
           <Route path="/me" element={<Profile2 />} />
           <Route path="/profiles/:username" element={<Profile2 />} />
