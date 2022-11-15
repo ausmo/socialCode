@@ -76,16 +76,35 @@ body{
 
 .postBody{
   color:rgb(0, 180, 0);
-  margin-right: 0px;
+ margin-left: 25px;
 }
 
 .name{
   color:white;
+  margin-left: 25px;
+}
+
+.commentName{
+  color:white;
+  margin-left: 75px;
 }
 
 .likeReply{
   color:white;
-  ;
+  margin-left: 15px;
+}
+
+.homeLikeReply{
+  color:white;
+}
+
+.homeSmall{
+  padding-left: 150px;
+}
+
+.homeLikeReply:hover{
+  color:rgb(0, 180, 0);
+  transition: 0.5s;
 }
 
 .likeReply:hover{
@@ -130,7 +149,9 @@ padding-right: 100px;
 
 .commentBody{
   color:rgb(0, 180, 0);
+  margin-left: 75px;
 }
+
 
 .postButton{
   background-color: rgb(0, 180, 0);

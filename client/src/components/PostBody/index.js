@@ -16,18 +16,6 @@ const PostBody = (props) => {
     <>
       {props.posts.map((post) => (
         <article>
-          {/* <figure className="media-left">
-          <p className="image is-64x64">
-            <img
-              src={savannahPic}
-              alt="savannah"
-              className="is-rounded"
-            />
-          </p>
-        </figure>
-        <div className="image is-48x48">
-          <img src={alexPic} alt="alex" className="is-rounded" />
-        </div> */}
           <div className="media-content"></div>
           <div className="content"></div>
           <p>
