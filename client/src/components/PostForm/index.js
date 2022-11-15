@@ -61,11 +61,11 @@ const PostForm = () => {
   };
 
   return (
-    <article className="homepageMedia">
+    <article className="media">
       <figure className="media-left">
-        <p className="image is-64x64">
+        {/* <p className="image is-64x64">
           <img src={me2} alt = "Austin" className="is-rounded"/>
-        </p>
+        </p> */}
       </figure>
       <div className="media-content">
         <div className="field">
@@ -75,7 +75,7 @@ const PostForm = () => {
         </div>
         <div className="field">
           <p className="control">
-            <button className="postButton">Post comment</button>
+            <button className="postButton">Post</button>
           </p>
         </div>
       </div>

@@ -2,31 +2,29 @@ import Navbar from "../components/Navbar";
 import PostForm from "../components/PostForm";
 import CommentForm from "../components/CommentForm";
 import CommentBody from "../components/CommentBody";
-import React from "react";
+import React,{useState} from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_PROFILE, QUERY_ME } from "../utils/queries";
 import Auth from "../utils/auth";
 import PostBody from "../components/PostBody";
-import PostList from '../components/PostList';
+import PostList from "../components/PostList";
 import savannahPic from "../img/savannah.jpg";
 import CommentList from "../components/CommentList";
 import me2 from "../img/me2.jpg";
 import alexPic from "../img/alex.png";
 import groupPic from "../img/p3g.jpg";
 
-
-
 const Profile2 = () => {
-    const { profilename: profileParam } = useParams();
-
+  const { profilename: profileParam } = useParams();
+  const [showCommentForm, toggleCommentForm] = useState(false)
   const { loading, data } = useQuery(profileParam ? QUERY_PROFILE : QUERY_ME, {
     variables: { profilename: profileParam },
   });
 
   const profile = data?.me || data?.profile || {};
 
-  console.log(profile)
+  console.log(profile);
   // navigate to personal profile page if profilename is yours
   if (Auth.loggedIn() && Auth.getProfile().data.profilename === profileParam) {
     return <Navigate to="/me" />;
@@ -47,9 +45,14 @@ const Profile2 = () => {
   return (
     <>
       <Navbar />
-      
-      <h1 className="banner">Viewing {profile ? `${profile.profilename}'s` : 'your'} profile.</h1>
 
+      <h1 className="banner">
+        Viewing {profile ? `${profile.profilename}'s` : "your"} profile
+      </h1>
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="columns">
         <div className="column is-one-third">
           <p className="bd-notification is-info"></p>
@@ -60,7 +63,7 @@ const Profile2 = () => {
               <p className="image is-256x256">
                 <img
                   src={me2}
-                //   need database for profile pic and alt
+                  //   need database for profile pic and alt
                   className="is-rounded profilePic"
                   alt="Austin Moore Profile Pic"
                 />
@@ -72,7 +75,7 @@ const Profile2 = () => {
               <br />
               <ul className="asl">
                 {/* need to pull these from sign up database */}
-                <li>Dallas, TX</li> 
+                <li>Dallas, TX</li>
                 <li>Frontend Dev</li>
                 <li>Udexx Tech LLC</li>
               </ul>
@@ -100,10 +103,8 @@ const Profile2 = () => {
       <PostForm />
       <br />
       <br />
-      <PostBody />
-      <CommentList />
-      <CommentForm />
-      <PostList  posts={profile.posts} title={"test"}/>
+
+      {/* <PostList  posts={profile.posts} title={"test"}/> */}
       <div className="columns">
         <div className="column is-one-fifth">
           <h2 className="friendsList">Friends</h2>
@@ -113,7 +114,7 @@ const Profile2 = () => {
             <li className="friend">
               <p className="image is-48x48">
                 <img
-                  src= {savannahPic}
+                  src={savannahPic}
                   className="is-rounded"
                   alt="Savannah McGinnis Profile Pic"
                 />
@@ -146,7 +147,7 @@ const Profile2 = () => {
           <div className="p3gText">Project 3 Gang</div>
         </div>
         <div className="column">
-          <div className="media">
+          <div className="profileMedia">
             <figure className="media-left">
               <p className="image is-64x64">
                 <img
@@ -155,6 +156,13 @@ const Profile2 = () => {
                   alt="Austin Moore Profile Pic"
                 />
               </p>
+              <PostBody posts={profile.posts} />
+              <small>
+                <a className="likeReply">Like</a> ·{" "}
+                
+              </small>
+              {/* <CommentList /> */}
+              {showCommentForm ? <CommentForm /> :(<a  className="likeReply" onClick = {()=>toggleCommentForm(!showCommentForm)}>Reply</a>)}
               {/* might want to add comment body and form */}
             </figure>
           </div>
@@ -162,6 +170,6 @@ const Profile2 = () => {
       </div>
     </>
   );
-}
+};
 
 export default Profile2;

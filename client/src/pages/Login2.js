@@ -10,11 +10,6 @@ import Auth from '../utils/auth';
 
 
 
-
-
-
-
-
 const Login2 = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_PROFILE);
@@ -61,12 +56,12 @@ const Login2 = (props) => {
       <div className="container">
         <div className="columns is-centered">
           <div className="column is-5-tablet is-4-desktop is-4-widescreen">
-            <form className="box">
+            <form className="box" onSubmit={handleFormSubmit}>
                 <h1 className="is-size-3">console.log(in)</h1>
               <div className="field">
                 <label className="label">Email</label>
                 <div className="control has-icons-left">
-                  <input type="email" placeholder="e.g. electric@boogaloo.com" className="input" required/>
+                  <input type="email" placeholder="e.g. electric@boogaloo.com" className="input" name="email" id="email" onChange={handleChange} required/>
                   <span className="icon is-small is-left">
                     <i className="fa fa-envelope"></i>
                   </span>
@@ -75,7 +70,7 @@ const Login2 = (props) => {
               <div className="field">
                 <label className="label">Password</label>
                 <div className="control has-icons-left">
-                  <input type="password" placeholder="*******" className="input" required/>
+                  <input type="password" placeholder="*******" className="input" name="password" id="password" onChange={handleChange} required/>
                   <span className="icon is-small is-left">
                     <i className="fa fa-lock"></i>
                   </span>
